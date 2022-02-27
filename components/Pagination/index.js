@@ -4,8 +4,9 @@ const Pagination = (props) => {
   return (
     <StyledPagination
       {...props}
-      defaultCurrent={1}
+      current={props.current}
       defaultPageSize={props.defaultPageSize}
+      hideOnSinglePage={true}
       onChange={(page, pageSize) => {
         props.setPage(page);
         props.setLimit(pageSize);

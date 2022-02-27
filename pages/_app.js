@@ -8,7 +8,7 @@ import { Layout } from 'components';
 
 import 'antd/dist/antd.css';
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <SSRProvider>
       <ThemeProvider theme={theme}>
@@ -20,5 +20,3 @@ function MyApp({ Component, pageProps }) {
     </SSRProvider>
   );
 }
-
-export default MyApp;

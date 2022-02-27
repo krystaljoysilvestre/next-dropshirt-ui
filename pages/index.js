@@ -10,7 +10,7 @@ const Catalog = () => {
       <Gallery loading />
       <Pagination />
     </Container>
-  )
+  );
 };
 
 export default Catalog;

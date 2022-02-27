@@ -1,21 +1,20 @@
 import { Card as ANTDCard, Skeleton, Row } from 'antd';
 
-import { 
-  StyledCard, 
-  Caption, 
-  Name, 
-  Price, 
-  Cover, 
-  Container, 
-  StyledImage, 
-  CoverPlaceholder 
-} from "./style";
+import {
+  StyledCard,
+  Caption,
+  Name,
+  Price,
+  Cover,
+  Container,
+  StyledImage,
+  CoverPlaceholder,
+} from './style';
 
 const { Meta } = ANTDCard;
 
 const Card = ({ loading }) => {
   const renderCover = () => {
-
     return (
       <Cover>
         {loading ? (
@@ -35,7 +34,7 @@ const Card = ({ loading }) => {
           </Container>
         )}
       </Cover>
-    )
+    );
   };
 
   const renderTitle = () => {
@@ -45,14 +44,16 @@ const Card = ({ loading }) => {
           <Skeleton.Button active style={{ width: 150 }} />
           <Skeleton.Button active style={{ width: 75 }} />
         </Row>
-      )
+      );
     } else {
       return (
         <Caption>
           <Name>Baby Creator</Name>
-          <Price gradient shape="round" size="small">€30.00</Price>
+          <Price gradient="true" shape="round" size="small">
+            €30.00
+          </Price>
         </Caption>
-      )
+      );
     }
   };
 

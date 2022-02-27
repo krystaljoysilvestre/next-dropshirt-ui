@@ -1,7 +1,7 @@
 import logo from 'public/logo.png';
 
 import { Button } from 'components';
-import { Wrapper, Logo, Center, StyledMenu, StyledMenuItem } from "./style";
+import { Wrapper, Logo, Center, StyledMenu, StyledMenuItem } from './style';
 
 const Header = () => {
   return (
@@ -21,11 +21,15 @@ const Header = () => {
 
       <div>
         <Button type="text">Login</Button>
-        <Button gradient="true" type="text">Make a Design</Button>
-        <Button type="primary" size="large" shape="round">Register</Button>
+        <Button gradient="true" type="text">
+          Make a Design
+        </Button>
+        <Button type="primary" size="large" shape="round">
+          Register
+        </Button>
       </div>
     </Wrapper>
-  )
+  );
 };
 
 export default Header;

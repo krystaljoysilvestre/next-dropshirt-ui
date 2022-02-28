@@ -1,4 +1,6 @@
 import { Card as ANTDCard, Skeleton, Row } from 'antd';
+import Link from 'next/link';
+import { products } from 'constants/pathname';
 
 import {
   StyledCard,
@@ -13,7 +15,7 @@ import {
 
 const { Meta } = ANTDCard;
 
-const Card = ({ loading }) => {
+const Card = ({ item, loading }) => {
   const renderCover = () => {
     return (
       <Cover>
@@ -21,16 +23,17 @@ const Card = ({ loading }) => {
           <CoverPlaceholder />
         ) : (
           <Container>
-            <StyledImage
-              src={`https://cdn-staging.dropshirt.nl/PFM0_STTB918_C001.jpg?v=1645276685?w=3840&q=75`}
-              preview={false}
-              placeholder={
+            <Link href={`${products}/${item.productId}`}>
+              <a>
                 <StyledImage
+                  src={item.display.images[0]}
                   preview={false}
-                  src="https://cdn-staging.dropshirt.nl/PFM0_STTB918_C001.jpg?v=1645276685?w=3840&q=75"
+                  placeholder={
+                    <StyledImage preview={false} src={item.display.images[0]} />
+                  }
                 />
-              }
-            />
+              </a>
+            </Link>
           </Container>
         )}
       </Cover>
@@ -48,10 +51,14 @@ const Card = ({ loading }) => {
     } else {
       return (
         <Caption>
-          <Name>Baby Creator</Name>
-          <Price gradient="true" shape="round" size="small">
-            €30.00
-          </Price>
+          <Name>{item.name}</Name>
+          <Link href={`${products}/${item.productId}`}>
+            <a>
+              <Price type="primary" gradient="true" shape="round" size="small">
+                €{item.display.price}
+              </Price>
+            </a>
+          </Link>
         </Caption>
       );
     }

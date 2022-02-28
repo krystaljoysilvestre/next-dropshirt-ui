@@ -3,7 +3,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { Image } from 'antd';
 
 import FabricJSCanvas from '../FabricJSCanvas';
-import useFabricJSEditor from 'hooks/useFabricJSEditor';
+import useFabricJSEditor from 'lib/hooks/useFabricJSEditor';
 
 import { Container, Background, Loader } from './style';
 

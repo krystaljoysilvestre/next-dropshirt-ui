@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setOrientation } from "lib/editorSlice";
 import { Orientation, FrontCanvas, BackCanvas } from "./components";
 
 import { 
@@ -9,21 +11,22 @@ import {
 } from "./style";
 
 const ProductPreview = ({ images, isEditable }) => {
-  const [selectedOrientation, setSelectedOrientation] = useState('Front');
+  const dispatch = useDispatch();
+  const { orientation } = useSelector((state) => state.editor);
 
   return (
     <Wrapper>
       <CanvasTemplate>
         <Topbar>
           <Orientation
-            selected={selectedOrientation} 
-            onSelect={(orientation) => setSelectedOrientation(orientation)}
+            selected={orientation} 
+            onSelect={(orientation) => dispatch(setOrientation(orientation))}
           />
         </Topbar>
 
         <CanvasContainer>
-          <FrontCanvas visible={selectedOrientation === 'Front'} isEditable={isEditable} image={images?.length > 0 ? images[0] : ''} />
-          <BackCanvas visible={selectedOrientation === 'Back'} isEditable={isEditable} image={images?.length > 0 ? images[1] : ''} />
+          <FrontCanvas visible={orientation === 'Front'} isEditable={isEditable} image={images?.length > 0 ? images[0] : ''} />
+          <BackCanvas visible={orientation === 'Back'} isEditable={isEditable} image={images?.length > 0 ? images[1] : ''} />
         </CanvasContainer>
       </CanvasTemplate>
     </Wrapper>

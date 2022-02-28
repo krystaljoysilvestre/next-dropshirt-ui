@@ -8,7 +8,7 @@ import { HeartOutlined } from '@ant-design/icons';
 import { products } from 'constants/pathname';
 import { useGetProductByIdQuery } from "lib/productApi";
 import { setId, setColor, setFinish, setSize, reset } from "lib/selectedProductSlice";
-import useFilteredVariants from "hooks/useFilteredVariants";
+import useFilteredVariants from "lib/hooks/useFilteredVariants";
 import theme from 'styles/theme';
 
 import { 

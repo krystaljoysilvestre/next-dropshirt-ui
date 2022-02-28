@@ -5,7 +5,7 @@ import { Row, Col, Empty } from 'antd';
 
 import { useGetProductByIdQuery } from "lib/productApi";
 import { setId, setColor, setFinish, setSize, reset } from "lib/selectedProductSlice";
-import useFilteredVariants from "hooks/useFilteredVariants";
+import useFilteredVariants from "lib/hooks/useFilteredVariants";
 
 import { 
   Breadcrumb, 

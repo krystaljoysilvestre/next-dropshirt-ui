@@ -1,12 +1,16 @@
+import Link from 'next/link';
 import logo from 'public/logo.png';
 
 import { Button } from 'components';
 import { Wrapper, Logo, Center, StyledMenu, StyledMenuItem } from './style';
 
-const Header = () => {
+const Header = () => {  
   return (
     <Wrapper>
-      <Logo src={logo.src} alt="DropShirt logo" />
+       <Link href={'/'} passHref>
+         <Logo src={logo.src} alt="DropShirt logo" />
+       </Link>
+
 
       <Center>
         <StyledMenu mode="horizontal" defaultSelectedKeys={['collection']}>

@@ -38,7 +38,6 @@ export const StyledButton = styled(Button)`
 
   ${props => props.type === 'text' && `
     &:hover {
-      background-image: none !important;
       span {
         color: rgba(0, 0, 0, 0.85) !important;
       }
@@ -46,17 +45,29 @@ export const StyledButton = styled(Button)`
   `}
 
   ${props => props.gradient === 'true' && `
-    ${props.type !== 'text' ? `
+
+    &:not(.ant-btn-text) {
       background-image: linear-gradient(
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
-      );
-    ` : ''}
+      ),
+        linear-gradient(108.41deg, #0085ff 0%, #ff00ff 100%) !important;
+      background-origin: border-box !important;
+      border: 1px solid transparent !important;
+      box-shadow: 1000px 0 #ffffff inset !important;
 
-    linear-gradient(108.41deg, #0085ff 0%, #ff00ff 100%) !important;
-    background-origin: border-box !important;
-    border: 1px solid transparent !important;
-    box-shadow: 1000px 0 #ffffff inset !important;
+      &:hover, &:focus, &:active {
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(108.41deg, #0085ff 0%, #ff00ff 100%) !important;
+        background-origin: border-box !important;
+        border: 1px solid transparent !important;
+        box-shadow: 1000px 0 #ffffff inset !important;
+      }
+    }
+    
 
     span {
       background-image: linear-gradient(
@@ -72,25 +83,14 @@ export const StyledButton = styled(Button)`
 
       &:hover, &:active, &:focus {
         background-image: linear-gradient(
-          rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 0)
-        );
-        linear-gradient(108.41deg, #0085ff 0%, #ff00ff 100%) !important;
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(108.41deg, #0085ff 0%, #ff00ff 100%) !important;
         background-clip: text !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: rgba(255, 255, 255, 0.001) !important;
       }
-    }
-
-    &:hover, &:focus, &:active {
-      background-image: linear-gradient(
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0)
-      );
-      linear-gradient(108.41deg, #0085ff 0%, #ff00ff 100%) !important;
-      background-origin: border-box !important;
-      border: 1px solid transparent !important;
-      box-shadow: 1000px 0 #ffffff inset !important;
     }
   `}
 

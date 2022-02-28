@@ -12,6 +12,7 @@ export const Wrapper = styled.header`
 
 export const Logo = styled.img`
   height: 42px;
+  z-index: 1;
 `;
 
 export const Center = styled.div`

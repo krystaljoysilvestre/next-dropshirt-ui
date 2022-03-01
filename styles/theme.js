@@ -1,6 +1,7 @@
 const theme = {
   palette: {
-    dsMagenta: '#FF00FF'
+    dsMagenta: '#FF00FF',
+    dsBlue: '#2AA8D2'
   },
   text: {
     default: '#000000',
@@ -15,7 +16,13 @@ const theme = {
   background: {
     dark: '#202020',
     light: '#FFFFFF',
-    gray: '#EFEFEF'
+    gray: '#EFEFEF',
+    lightGray: '#FAFAFA'
+  },
+  status: {
+    success: '#0084FF',
+    warning: '#FF9D66',
+    error: '#E92F11'
   }
 };
 

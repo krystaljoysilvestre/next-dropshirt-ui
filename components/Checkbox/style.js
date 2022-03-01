@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   cursor: default;
   justify-content: center;
 
+  b {
+    font-weight: 700;
+  }
+
   ${props => props.block && 'width: 100%;'}
 `;
 

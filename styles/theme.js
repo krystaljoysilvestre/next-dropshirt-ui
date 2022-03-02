@@ -11,7 +11,8 @@ const theme = {
   },
   border: {
     default: '#DCDCDC',
-    dark: '#000000'
+    dark: '#000000',
+    light: '#FFFFFF',
   },
   background: {
     dark: '#202020',

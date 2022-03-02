@@ -27,28 +27,30 @@ export default function FabricJSCanvas({ onReady }) {
     };
 
     setCurrentDimensions();
+    canvas.calcOffset();
     
     // Resize Observers
     // window
     window.addEventListener('resize', setCurrentDimensions, false);
-    if (canvasParentContainer) {
-      const resizeObserver = new ResizeObserver(setCurrentDimensions);
-      resizeObserver.observe(canvasParentContainer);
-    }
+    // container
+    const resizeObserver = new ResizeObserver(setCurrentDimensions);
+    resizeObserver.observe(canvasParentContainer);
 
     return () => {
       canvas.dispose();
       window.removeEventListener('resize', setCurrentDimensions);
-
-      if (canvasParentContainer) {
-        resizeObserver.disconnect();
-      }
+      resizeObserver.disconnect();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div ref={canvasElParent} style={{ height: '100%', position: 'relative' }}>
+    <div 
+      ref={canvasElParent}
+      style={{ 
+        position: "relative", 
+        height: "100%"
+      }}>
       <canvas ref={canvasEl} />
     </div>
   );

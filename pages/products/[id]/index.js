@@ -43,7 +43,7 @@ const Product = () => {
   const router = useRouter();
   const productId = router.query?.id;
 
-  const { isLoading, isError, currentData } = useGetProductByIdQuery(productId);
+  const { isLoading, currentData } = useGetProductByIdQuery(productId);
   const productDetails = currentData?.data;
 
   const { color, finish, size, id } = useSelector((state) => state.selectedProduct);
@@ -82,9 +82,9 @@ const Product = () => {
     initializeSelectedProduct();
   }, [dispatch, productId, id, initializeSelectedProduct]);
   
-  if (isLoading) {
+  if (isLoading || !productId) {
     return <Loader height="85vh" tip="Loading..." />;
-  } else if (!isLoading && !productDetails){
+  } else if (!isLoading && !productDetails && productId){
     return (
       <Row style={{ height: '85vh' }} justify="center" align="middle">
         <Empty description={`No product found for "${productId}"`} image={Empty.PRESENTED_IMAGE_SIMPLE} />

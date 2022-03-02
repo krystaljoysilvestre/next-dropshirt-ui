@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Collapse } from 'antd';
+import { Collapse, Alert } from 'antd';
 import { Button } from "components";
 
 const { Panel } = Collapse;
@@ -33,6 +33,13 @@ export const Price = styled.div`
   font-size: 32px;
   line-height: 38px;
   margin-bottom: 3px;
+  transition: color 0.5s ease;
+
+  ${props => props.highlight ? `
+    color: ${props.theme.status.success};
+  ` : `
+    color: ${props.theme.text.default};
+  `}
 `;
 
 export const Tags = styled.div`
@@ -94,5 +101,32 @@ export const Design = styled(Panel)`
   .ant-collapse-content-box {
     padding: 15px 0 0 0 !important;
     margin-bottom: -10px;
+  }
+`;
+
+export const StyledAlert = styled(Alert)`
+  border: none;
+  position: fixed;
+  top: 4%;
+  left: 15%;
+  width: 70%;
+  z-index: 9999;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  background: ${props => props.theme.status.success};
+
+  .ant-alert-message {
+    color: ${props => props.theme.text.light};
+    display: flex;
+    align-items: center;
+
+    .anticon {
+      font-size: 22px;
+      margin-left: 5px;
+      margin-right: 15px;
+    }
   }
 `;

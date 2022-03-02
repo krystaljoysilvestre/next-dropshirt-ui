@@ -4,10 +4,6 @@ export const Wrapper = styled.div`
   border: 1px solid ${props => props.theme.border.default};
   width: 100%;
   margin-left: 10px;
-  min-width: 352px;
-`;
-
-export const CanvasTemplate = styled.div`
   position: relative;
   min-height: 350px;
   overflow: hidden;

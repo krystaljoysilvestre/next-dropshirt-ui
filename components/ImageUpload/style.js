@@ -216,30 +216,3 @@ export const Actions = styled.div`
   }
 `;
 
-export const StyledAlert = styled(Alert)`
-  border: none;
-  position: fixed;
-  top: 4%;
-  left: 15%;
-  width: 70%;
-  z-index: 9999;
-  height: 40px;
-  font-size: 14px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  background: ${props => props.theme.status.success};
-
-  .ant-alert-message {
-    color: ${props => props.theme.text.light};
-    display: flex;
-    align-items: center;
-
-    .anticon {
-      font-size: 22px;
-      margin-left: 5px;
-      margin-right: 15px;
-    }
-  }
-`;
-

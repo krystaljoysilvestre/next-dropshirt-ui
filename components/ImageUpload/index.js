@@ -168,7 +168,7 @@ const ImageUpload = ({ onChange, showDPI, onRemove }) => {
                     {fileDimensions?.width} x {fileDimensions?.height} px
                   </Dimensions>
 
-                  {showDPI && (
+                  {showDPI && file.type !== "image/svg+xml" && (
                     <Quality quality={imageQuality}>
                       {imageQuality === 'low' ? 
                         <ExclamationCircleOutlined style={{ marginRight: '5px' }} /> 

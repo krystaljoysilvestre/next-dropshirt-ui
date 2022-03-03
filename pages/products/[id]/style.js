@@ -6,6 +6,10 @@ const { Panel } = Collapse;
 
 export const Container = styled.div`
   padding: 2.5% 12% 10% 12%;
+
+  @media (max-width: 500px) {
+    padding: 2.5% 5% 10% 5%;
+  }
 `;
 
 export const StyleCode = styled.div`

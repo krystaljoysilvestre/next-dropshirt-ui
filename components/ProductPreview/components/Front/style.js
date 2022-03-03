@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Background = styled.div`
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   min-width: 350px;
   display: flex;

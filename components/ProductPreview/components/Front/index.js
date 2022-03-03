@@ -49,9 +49,9 @@ const FrontCanvas = ({ image, visible, isEditable }) => {
           <DesignArea 
             showBoundingBox={showBoundingBox}
             style={{
-              width: '42%',
+              width: '34.5%',
               height: '43%',
-              left: '29%',
+              left: '33%',
               top: '33%',
             }}
           >

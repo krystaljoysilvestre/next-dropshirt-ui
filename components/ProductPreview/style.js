@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   border: 1px solid ${props => props.theme.border.default};
   width: 100%;
-  margin-left: 10px;
   position: relative;
   min-height: 350px;
   overflow: hidden;

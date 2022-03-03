@@ -95,8 +95,13 @@ const Product = () => {
       <Container>
         {/* <Breadcrumb items={['Men', 'Shirts + Sweatshirts', 'Oversized', 'Freestyler']} /> */}
 
-        <Row>
-          <Col sm={{ span: 24, order: 2 }} md={{ span: 8, order: 1 }} style={{ paddingRight: '30px' }}>
+        <Row gutter={[{ lg: 40 }, { xs: 30, sm: 30, md: 30 }]}>
+          <Col 
+            xs={{ span: 24, order: 2 }} 
+            sm={{ span: 24, order: 2 }} 
+            md={{ span: 24, order: 2 }} 
+            lg={{ span: 8, order: 1 }} 
+          >
             <StyleCode>{productDetails.styleCode}</StyleCode>
             <Name>{productDetails.name}</Name>
             <Price>€{selectedVariant?.price}</Price>
@@ -166,7 +171,12 @@ const Product = () => {
               <AppearsInList />
             </AppearsInContainer>
           </Col> 
-          <Col sm={{ span: 24, order: 1 }} md={{ span: 16, order: 2 }}>
+          <Col 
+            xs={{ span: 24, order: 1 }} 
+            sm={{ span: 24, order: 1 }} 
+            md={{ span: 24, order: 1 }} 
+            lg={{ span: 16, order: 2 }}
+          >
             <ProductPreview
               images={selectedVariant?.images}
             />

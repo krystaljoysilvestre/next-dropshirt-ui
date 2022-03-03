@@ -49,10 +49,10 @@ const BackCanvas = ({ image, visible, isEditable }) => {
           <DesignArea 
             showBoundingBox={showBoundingBox}
             style={{
-              width: '42%',
-              height: '46%',
-              left: '29%',
-              top: '30%',
+              width: '34.5%',
+              height: '54%',
+              left: '33%',
+              top: '25%'
             }}
           >
             <FabricJSCanvas onReady={onReady} />

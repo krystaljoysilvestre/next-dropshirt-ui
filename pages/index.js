@@ -16,7 +16,6 @@ const Catalog = () => {
     isFetching,
   } = useGetProductListQuery({ page, limit, searchTerm });
 
-  const pageSizeOptions = [24, 48, 96];
   const total = products?.metadata?.pagination.totalRecords;
 
   const handleSearch = (term) => {
@@ -54,7 +53,6 @@ const Catalog = () => {
           setLimit={setLimit}
           current={page}
           defaultPageSize={limit}
-          pageSizeOptions={pageSizeOptions}
           total={total}
         />
       </Container>

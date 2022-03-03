@@ -23,11 +23,10 @@ import {
   Name,
   Dimensions,
   Quality,
-  Actions,
-  StyledAlert
+  Actions
  } from './style';
 
-const ImageUpload = ({ onChange, showDPI }) => {
+const ImageUpload = ({ onChange, showDPI, onRemove }) => {
   const [currentWindow, setCurrentWindow] = useState(undefined);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const reader = currentWindow ? new currentWindow.FileReader() : undefined;
@@ -38,7 +37,6 @@ const ImageUpload = ({ onChange, showDPI }) => {
   const [fileDimensions, setFileDimensions] = useState(null);
   const [imageQuality, setImageQuality] = useState('');
   const [isImageLoading, setIsImageLoading] = useState(true);
-  const [isImageDeleted, setIsImageDeleted] = useState(false);
 
   useEffect(() => {
     setCurrentWindow(window);
@@ -94,8 +92,7 @@ const ImageUpload = ({ onChange, showDPI }) => {
     setFile(null);
     setFileURL(null);
     setFileDimensions(null);
-    setIsImageDeleted(true); // to display alert
-    setTimeout(() => setIsImageDeleted(false), 1000);
+    onRemove();
   };
 
   const isValidImageFormat = (file) => {
@@ -191,18 +188,6 @@ const ImageUpload = ({ onChange, showDPI }) => {
           </div>
         )}
       </Container>
-      
-      {isImageDeleted && (
-        <StyledAlert 
-          message={
-            <>
-              <ExclamationCircleFilled />
-              Image deleted
-            </>
-          } 
-          type="success"
-        />
-      )}
     </>
   )
 };

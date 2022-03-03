@@ -4,6 +4,13 @@ import { Pagination } from 'antd';
 export const StyledPagination = styled(Pagination)`
   margin: 50px 0;
 
+  .ant-pagination-total-text {
+    font-size: 14px;
+    line-height: 33px;
+    color: ${props => props.theme.text.lightGray};
+    margin-right: 20px;
+  }
+
   .ant-pagination-item {
     border: 1px solid ${props => props.theme.border.default};
     border-radius: 4px;

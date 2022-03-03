@@ -1,19 +1,24 @@
 import { StyledPagination } from './style';
 
 const Pagination = (props) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <StyledPagination
       {...props}
       current={props.current}
       defaultPageSize={props.defaultPageSize}
-      hideOnSinglePage={true}
+      hideOnSinglePage
       onChange={(page, pageSize) => {
         props.setPage(page);
         props.setLimit(pageSize);
+        scrollToTop();
       }}
-      pageSizeOptions={props.pageSizeOptions}
-      showTotal={(total, range) => `${range[0]}-${range[1]} / ${total} items`}
+      showTotal={(total, range) => `${range[1]} / ${total} items`}
       total={props.total}
+      showSizeChanger={false}
     />
   );
 };
